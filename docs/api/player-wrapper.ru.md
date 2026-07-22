@@ -286,7 +286,7 @@ function completeQuest(playerName) {
     var player = MCEngineServer.getPlayer(playerName);
     
     if (player == null) {
-        MCEngineServer.log("Игрок " + playerName + " не найден (возможно, оффлайн).");
+        console.log("Игрок " + playerName + " не найден (возможно, оффлайн).");
         return;
     }
 
@@ -307,7 +307,7 @@ function completeQuest(playerName) {
         // 5. Устанавливаем эту точку как его личный спавн
         player.setSpawnPoint(0, 100, 0);
         
-        MCEngineServer.log("Игрок " + playerName + " успешно завершил квест.");
+        console.log("Игрок " + playerName + " успешно завершил квест.");
     } else {
         // Если условия не выполнены
         var currentDiamonds = player.getItemCount("minecraft:diamond");

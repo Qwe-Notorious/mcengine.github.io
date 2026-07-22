@@ -349,7 +349,7 @@ MCEngineServer.onInit(() => {
                 minions[i].kill();
             }
             
-            MCEngineServer.log("Guardian defeated, its minions destroyed!");
+            console.log("Guardian defeated, its minions destroyed!");
         }
     });
 });

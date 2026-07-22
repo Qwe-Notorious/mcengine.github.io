@@ -47,7 +47,7 @@ MCEngineServer.onInit(() => {
 **Пример:**
 
 ```javascript
-MCEngineServer.log("Это сообщение появится в консоли");
+console.log("Это сообщение появится в консоли");
 ```
 
 ---
@@ -75,7 +75,7 @@ MCEngineServer.onServerTick(() => {
     
     // Каждые 20 тиков (1 секунда)
     if (tickCounter % 20 === 0) {
-        MCEngineServer.log("Прошла 1 секунда!");
+        console.log("Прошла 1 секунда!");
     }
 });
 ```
@@ -117,9 +117,9 @@ MCEngineServer.clearQueueTick();
 var success = MCEngineServer.spawnEntity("minecraft:zombie", 100, 64, 200);
 
 if (success) {
-    MCEngineServer.log("Зомби заспавнен!");
+    console.log("Зомби заспавнен!");
 } else {
-    MCEngineServer.log("Ошибка спавна!");
+    console.log("Ошибка спавна!");
 }
 ```
 
@@ -204,7 +204,7 @@ var boss = MCEngineServer.createCustomMob("minecraft:zombie", 0, 100, 0, {
     },
     
     onDeath: (mob) => {
-        MCEngineServer.log("Страж повержен!");
+        console.log("Страж повержен!");
     }
 });
 ```
@@ -264,7 +264,7 @@ var mobWrapper = new MobWrapper(zombie);
 
 MCEngineServer.modifyAI(mobWrapper, {
     onDeath: (mob) => {
-        MCEngineServer.log("Конкретный зомби умер!");
+        Mconsole.log("Конкретный зомби умер!");
     }
 });
 ```
@@ -391,7 +391,7 @@ MCEngineServer.giveItem("Steve", "minecraft:diamond", 10);
 
 ```javascript
 if (MCEngineServer.hasItem("Steve", "minecraft:diamond", 5)) {
-    MCEngineServer.log("У Стива есть 5 алмазов!");
+    console.log("У Стива есть 5 алмазов!");
 }
 ```
 
@@ -461,7 +461,7 @@ MCEngineServer.clearAllModifications();
 
 ```javascript
 MCEngineServer.onInit(() => {
-    MCEngineServer.log("Скрипт босса загружен!");
+    console.log("Скрипт босса загружен!");
 });
 
 // Спавн босса через 5 секунд после запуска
@@ -497,7 +497,7 @@ MCEngineServer.onServerTick(() => {
             },
             
             onDeath: (mob) => {
-                MCEngineServer.log("Страж повержен!");
+                console.log("Страж повержен!");
                 
                 // Награждаем ближайшего игрока
                 var player = mob.findNearestPlayer(50);
@@ -508,7 +508,7 @@ MCEngineServer.onServerTick(() => {
             }
         });
         
-        MCEngineServer.log("Босс заспавнен!");
+        console.log("Босс заспавнен!");
     }
 });
 ```

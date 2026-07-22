@@ -46,7 +46,7 @@ Outputs a message to the server console and to the player's chat (if the script 
 **Example:**
 
 ```javascript
-MCEngineServer.log("This message will appear in the console");
+console.log("This message will appear in the console");
 ```
 
 ---
@@ -74,7 +74,7 @@ MCEngineServer.onServerTick(() => {
     
     // Every 20 ticks (1 second)
     if (tickCounter % 20 === 0) {
-        MCEngineServer.log("1 second has passed!");
+        console.log("1 second has passed!");
     }
 });
 ```
@@ -116,9 +116,9 @@ Spawns an entity by its ID in the Overworld at the specified coordinates.
 var success = MCEngineServer.spawnEntity("minecraft:zombie", 100, 64, 200);
 
 if (success) {
-    MCEngineServer.log("Zombie spawned!");
+    console.log("Zombie spawned!");
 } else {
-    MCEngineServer.log("Spawn error!");
+    console.log("Spawn error!");
 }
 ```
 
@@ -203,7 +203,7 @@ var boss = MCEngineServer.createCustomMob("minecraft:zombie", 0, 100, 0, {
     },
     
     onDeath: (mob) => {
-        MCEngineServer.log("Guardian defeated!");
+        console.log("Guardian defeated!");
     }
 });
 ```
@@ -263,7 +263,7 @@ var mobWrapper = new MobWrapper(zombie);
 
 MCEngineServer.modifyAI(mobWrapper, {
     onDeath: (mob) => {
-        MCEngineServer.log("Specific zombie died!");
+        console.log("Specific zombie died!");
     }
 });
 ```
@@ -390,7 +390,7 @@ Checks if a player has a certain amount of an item.
 
 ```javascript
 if (MCEngineServer.hasItem("Steve", "minecraft:diamond", 5)) {
-    MCEngineServer.log("Steve has 5 diamonds!");
+    console.log("Steve has 5 diamonds!");
 }
 ```
 
@@ -460,7 +460,7 @@ Here is a complete example of a script that creates a custom boss with unique be
 
 ```javascript
 MCEngineServer.onInit(() => {
-    MCEngineServer.log("Boss script loaded!");
+    console.log("Boss script loaded!");
 });
 
 // Spawn boss 5 seconds after launch
@@ -496,7 +496,7 @@ MCEngineServer.onServerTick(() => {
             },
             
             onDeath: (mob) => {
-                MCEngineServer.log("Guardian defeated!");
+                console.log("Guardian defeated!");
                 
                 // Reward the nearest player
                 var player = mob.findNearestPlayer(50);
@@ -507,7 +507,7 @@ MCEngineServer.onServerTick(() => {
             }
         });
         
-        MCEngineServer.log("Boss spawned!");
+        console.log("Boss spawned!");
     }
 });
 ```

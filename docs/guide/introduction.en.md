@@ -156,7 +156,7 @@ MCEngine adds some useful commands:
     The `/mcengine run` command is useful for testing individual functions without having to create files:
 
 ````javascript
-/mcengine run MCEngineServer.log("Test message")
+/mcengine run console.log("Test message")
 ````
 
 ## What's next?
@@ -164,7 +164,7 @@ MCEngine adds some useful commands:
 Now that you understand the basics of the MCEngine architecture, go to the following sections:
 
 * **[Your first script](first-script.md )** — Let's write a simple script that spawns mobs and reacts to events.
-* **[API Reference](api-reference.md )** — Full description of all available methods and classes.
+* **[API Reference](api-reference-server.en.md )** — Full description of all available methods and classes.
 
 !!! info "Need help?"
     If you have any questions or problems, create a topic in the project repository:

@@ -287,7 +287,7 @@ function completeQuest(playerName) {
     var player = MCEngineServer.getPlayer(playerName);
     
     if (player == null) {
-        MCEngineServer.log("Player " + playerName + " not found (possibly offline).");
+        console.log("Player " + playerName + " not found (possibly offline).");
         return;
     }
 
@@ -308,7 +308,7 @@ function completeQuest(playerName) {
         // 5. Set this point as their personal spawn
         player.setSpawnPoint(0, 100, 0);
         
-        MCEngineServer.log("Player " + playerName + " successfully completed the quest.");
+        console.log("Player " + playerName + " successfully completed the quest.");
     } else {
         // If conditions are not met
         var currentDiamonds = player.getItemCount("minecraft:diamond");

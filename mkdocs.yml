@@ -53,7 +53,7 @@ nav:
     - Introduction: guide/introduction.md
     - First Script: guide/first-script.md
   - API Reference:
-    - Client API: api/api-reference-client.md
     - Server API: api/api-reference-server.md
+    - Client API: api/api-reference-client.md
     - Mob Wrapper: api/mob-wrapper.md
     - Player Wrapper: api/player-wrapper.md
