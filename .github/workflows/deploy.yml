@@ -2,7 +2,7 @@ name: Deploy MkDocs site to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Убедись, что твоя основная ветка называется main (или измени на master)
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -24,11 +24,11 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.14.3'
-          cache: 'pip' # Автоматически кэширует зависимости из requirements.txt
+          python-version: '3.14'
+          cache: 'pip'
           
       - name: Install dependencies
-        run: pip install -r requirements.txt # <-- ИСПРАВЛЕНИЕ: читаем файл требований
+        run: pip install -r requirements.txt
         
       - name: Build site
         run: mkdocs build
