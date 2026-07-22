@@ -1,0 +1,59 @@
+site_name: MCEngine Documentation
+site_url: https://qwe-notorious.github.io/mcengine.github.io/
+site_description: Official documentation for the MCEngine Fabric mod.
+
+theme:
+  name: material
+  language: en
+
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+  - i18n:
+      default_language: en
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: ru
+          name: Русский
+          build: true
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Guide:
+    - Introduction: guide/introduction.md
+    - First Script: guide/first-script.md
+  - API Reference:
+    - Client API: api/api-reference-client.md
+    - Server API: api/api-reference-server.md
+    - Mob Wrapper: api/mob-wrapper.md
+    - Player Wrapper: api/player-wrapper.md
