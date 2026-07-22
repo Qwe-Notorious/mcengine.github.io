@@ -2,7 +2,7 @@ name: Deploy MkDocs site to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Или master
+    branches: ["main"] # Убедись, что твоя основная ветка называется main (или измени на master)
   workflow_dispatch:
 
 permissions:
@@ -20,23 +20,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
+        
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.14'
-          cache: 'pip'
-
+          python-version: '3.14.3'
+          cache: 'pip' # Автоматически кэширует зависимости из requirements.txt
+          
       - name: Install dependencies
-        run: pip install mkdocs-material
-
+        run: pip install -r requirements.txt # <-- ИСПРАВЛЕНИЕ: читаем файл требований
+        
       - name: Build site
         run: mkdocs build
-
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'site/' # MkDocs собирает сайт в папку site
+          path: 'site/'
 
   deploy:
     environment:
